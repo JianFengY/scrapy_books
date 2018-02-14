@@ -1,0 +1,1086 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+  <title>华南农业大学图书馆v5.5书目检索系统 </title>
+<link type="text/css" rel="stylesheet" href="../tpl/css/style.css">
+<link type="text/css" rel="stylesheet" href="../tpl/css/mylib.css" />
+<link type="text/css" rel="stylesheet" href="../tpl/css/ui-lightness/jquery-ui-1.8.13.custom.css">
+<link type="text/css" rel="stylesheet" href="../tpl/css/font-awesome.css">
+
+
+<script  type="text/javascript" src="../tpl/js/jquery.1.7.1.min.js"></script>
+<script  type="text/javascript" src="../tpl/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script  type="text/javascript" src="../tpl/js/highlighter.js"></script>
+
+
+<script type="text/javascript" src="../tpl/js/md5.js"></script>
+<script type="text/javascript" src="../tpl/js/base64.js"></script>
+</head>
+<body>
+<div id="header_opac">
+	<h1 class="header_opac_img">
+    <div class="header_opac_logo">
+    	华南农业大学图书馆书目检索系统<br>
+        <p>Online Public Access Catalogue</p>
+        
+    </div>
+    </h1>
+    <div class="header_right header_right_top">
+      <p class="header_right_font">       </p>
+      <p style="margin-top:60px;" class="header_right_font">
+        <a href="../opac/book_cart.php">暂存书架(<span id="bookcartCount">0</span>)</a> | <font color="blue"></font> <a href="../reader/login.php" style="color:#ff0000;">登录</a></p>
+       </div>
+</div>
+
+<div id="menubar">
+    <ul id="menu_top">
+    		  	<li><a href="../opac/search_adv.php" target="_self" >书目检索</a></li>
+	  		  	<li><a class="menu_top_on" style="color:#6C5B23;"	href="../top/top_lend.php" target="_self" >热门推荐</a></li>
+	  		  	<li><a href="../browse/cls_browsing.php" target="_self" >分类浏览</a></li>
+	  		  	<li><a href="../newbook/newbook_cls_browse.php" target="_self" >新书通报</a></li>
+	  		  	<li><a href="../peri/peri_nav_e.php" target="_self" >期刊导航</a></li>
+	  		  	<li><a href="../asord/asord_hist.php" target="_self" >读者荐购</a></li>
+	  		  	<li><a href="../shelf/curriculum_browse.php" target="_self" >学科参考</a></li>
+	  		  	<li><a href="../info/info_guide.php" target="_self" >信息发布</a></li>
+	  		  	<li><a href="../reader/redr_info.php" target="_self" >我的图书馆</a></li>
+	  		  	 	  	        <div class="clear"></div>
+    </ul>
+</div>
+<div id="submenu">
+	  	  	<a href="../top/top_lend.php" target="_self" ><strong style="">热门借阅</strong></a>	 	
+	  	
+	  	<a href="../top/top_score.php" target="_self" >热门评分</a>
+	  	
+	  	<a href="../top/top_shelf.php" target="_self" >热门收藏</a>
+	  	
+	  	<a href="../top/top_book.php" target="_self" >热门图书</a>
+	  	
+	  	<a href="../data/data_visual.php" target="_self" >借阅关系图</a>
+	        <div class="clear"></div>
+</div><div id="mainbox">
+	<div id="container">
+	<h5 class="box_bgcolor"><strong>热门借阅</strong></h5>
+    <p class="note">统计范围：<strong>2</strong> 个月　统计方式：<strong>借阅比例</strong>  分类：<strong>总体排行</strong></p>
+        <div id="underlinemenu"><ul><li><a href="?cls_no=A" >A 马列主义、毛泽东思想、邓小平理论</a></li><li><a href="?cls_no=B" >B 哲学、宗教</a></li><li><a href="?cls_no=C" >C 社会科学总论</a></li><li><a href="?cls_no=D" >D 政治、法律</a></li><li><a href="?cls_no=E" >E 军事</a></li><li><a href="?cls_no=F" >F 经济</a></li><li><a href="?cls_no=G" >G 文化、科学、教育、体育</a></li><li><a href="?cls_no=H" >H 语言、文字</a></li><li><a href="?cls_no=I" >I 文学</a></li><li><a href="?cls_no=J" >J 艺术</a></li><li><a href="?cls_no=K" >K 历史、地理</a></li><li><a href="?cls_no=N" >N 自然科学总论</a></li><li><a href="?cls_no=O" >O 数理科学与化学</a></li><li><a href="?cls_no=P" >P 天文学、地球科学</a></li><li><a href="?cls_no=Q" >Q 生物科学</a></li><li><a href="?cls_no=R" >R 医药、卫生</a></li><li><a href="?cls_no=S" >S 农业科学</a></li><li><a href="?cls_no=T" >T 工业技术</a></li><li><a href="?cls_no=U" >U 交通运输</a></li><li><a href="?cls_no=V" >V 航空、航天</a></li><li><a href="?cls_no=X" >X 环境科学,安全科学</a></li><li><a href="?cls_no=Z" >Z 综合性图书</a></li><li><a href="?cls_no=ALL"><b class="red">总体排行</b> </a></li></ul></div>
+        
+        <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#CCCCCC" class="table_line" >
+              <tr>
+                <td class="greytext"  width="3%" align="left"></td>
+                <td class="greytext"  width="25%">题名</td>
+                <td class="greytext"  width="20%" >责任者</td>
+                <td class="greytext"  width="22%" >出版信息</td>
+                <td class="greytext"  width="10%" >索书号</td>
+                <td class="greytext"  width="5%" >馆藏</td>
+                <td class="greytext"  width="8%" >借阅册次</td>
+                <td class="greytext"  width="6%" >借阅比</td>
+              </tr>
+                        <tr>
+                    <td class="whitetext">1</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000755863">&#x6697;&#x604b;&#x00b7;&#x6a58;&#x751f;&#x6dee;&#x5357;</a></td>
+                    <td class="whitetext">&#x516b;&#x6708;&#x957f;&#x5b89;&#x005b;&#x8457;&#x005d;</td>
+                    <td class="whitetext">&#x6e56;&#x5357;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0034;&#x002e;&#x0030;&#x0037;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0037;&#x002e;&#x0035;&#x0037;&#x002f;&#x0035;&#x0034;&#x0039;&#x0034;</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">10</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">2</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000742648">&#x0054;&#x0069;&#x006d;&#x0065;&#x0020;&#x0073;&#x0065;&#x0072;&#x0069;&#x0065;&#x0073;&#x0020;&#x0061;&#x006e;&#x0064;&#x0020;&#x0070;&#x0061;&#x006e;&#x0065;&#x006c;&#x0020;&#x0064;&#x0061;&#x0074;&#x0061;&#x0020;&#x0065;&#x0063;&#x006f;&#x006e;&#x006f;&#x006d;&#x0065;&#x0074;&#x0072;&#x0069;&#x0063;&#x0073;&#x0020;&#x002f;&#x0020;&#x0046;&#x0069;&#x0072;&#x0073;&#x0074;&#x0020;&#x0065;&#x0064;&#x0069;&#x0074;&#x0069;&#x006f;&#x006e;&#x002e;</a></td>
+                    <td class="whitetext">&#x004d;&#x002e;&#x0020;&#x0048;&#x0061;&#x0073;&#x0068;&#x0065;&#x006d;&#x0020;&#x0050;&#x0065;&#x0073;&#x0061;&#x0072;&#x0061;&#x006e;&#x002e;</td>
+                    <td class="whitetext"> </td>
+                    <td class="whitetext">&#x0046;&#x0032;&#x0032;&#x0034;&#x002e;&#x0030;&#x002f;&#x0045;&#x004e;&#x0034;</td>
+                    <td class="whitetext">1</td>
+                    <td class="whitetext">10</td>
+                    <td class="whitetext">10</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000598901">&#x6740;&#x6b7b;&#x4e00;&#x53ea;&#x77e5;&#x66f4;&#x9e1f;&#x002e;&#x7b2c;&#x0032;&#x7248;</a></td>
+                    <td class="whitetext">&#x0028;&#x7f8e;&#x56fd;&#x0029;&#x0020;&#x54c8;&#x73c0;&#x00b7;&#x674e;&#x8457;</td>
+                    <td class="whitetext">&#x8bd1;&#x6797;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0049;&#x0037;&#x0031;&#x0032;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0032;&#x0033;&#x0031;&#x003d;&#x0032;</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">10</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000179398">&#x897f;&#x7a97;&#x6cd5;&#x96e8;</a></td>
+                    <td class="whitetext">&#x5218;&#x661f;&#x8457;</td>
+                    <td class="whitetext">&#x6cd5;&#x5f8b;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0033;</td>
+                    <td class="whitetext">&#x0044;&#x0039;&#x0030;&#x0039;&#x002e;&#x0031;&#x002f;&#x0033;</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">9</td>
+                    <td class="whitetext">1.8</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000107122">&#x53eb;&#x9b42;&#x003a;&#x0031;&#x0037;&#x0036;&#x0038;&#x5e74;&#x4e2d;&#x56fd;&#x5996;&#x672f;&#x5927;&#x6050;&#x614c;&#x003a;&#x0074;&#x0068;&#x0065;&#x0020;&#x0043;&#x0068;&#x0069;&#x006e;&#x0065;&#x0073;&#x0065;&#x0020;&#x0073;&#x006f;&#x0072;&#x0063;&#x0065;&#x0072;&#x0079;&#x0020;&#x0073;&#x0063;&#x0061;&#x0072;&#x0065;&#x0020;&#x006f;&#x0066;&#x0020;&#x0031;&#x0037;&#x0036;&#x0038;</a></td>
+                    <td class="whitetext">&#x0028;&#x7f8e;&#x0029;&#x0020;&#x5b54;&#x98de;&#x529b;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x4e09;&#x8054;&#x4e66;&#x5e97; &#x0031;&#x0039;&#x0039;&#x0039;</td>
+                    <td class="whitetext">&#x0042;&#x0039;&#x0039;&#x0032;&#x002e;&#x0035;&#x002f;&#x0034;</td>
+                    <td class="whitetext">8</td>
+                    <td class="whitetext">9</td>
+                    <td class="whitetext">1.13</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000800052">&#x4eca;&#x65e5;&#x5e97;&#x4f11;&#x003a;&#x0039;&#x0033;&#x5c81;&#x65e7;&#x4e66;&#x5e97;&#x4e3b;&#x5199;&#x7ed9;&#x751f;&#x6d3b;&#x7684;&#x60c5;&#x4e66;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x5742;&#x672c;&#x5065;&#x4e00;&#x8457;</td>
+                    <td class="whitetext">&#x65b0;&#x661f;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;&#x002e;&#x0030;&#x0036;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0036;&#x0035;&#x002f;&#x0031;&#x0038;&#x0037;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">8</td>
+                    <td class="whitetext">2.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">7</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000151833">&#x75db;&#x98ce;&#x7684;&#x8bca;&#x65ad;&#x4e0e;&#x6cbb;&#x7597;</a></td>
+                    <td class="whitetext">&#x859b;&#x8000;&#x660e;&#xff0c;&#x674e;&#x6668;&#x949f;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x4eba;&#x6c11;&#x519b;&#x533b;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0033;</td>
+                    <td class="whitetext">&#x0052;&#x0035;&#x0038;&#x0039;&#x002e;&#x0037;&#x002f;&#x0034;</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">7</td>
+                    <td class="whitetext">1.4</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">8</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000396403">&#x56fd;&#x5883;&#x4ee5;&#x5357;&#x0020;&#x592a;&#x9633;&#x4ee5;&#x897f;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x6751;&#x4e0a;&#x6625;&#x6811;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x8bd1;&#x6587;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0037;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0033;&#x0035;&#x0036;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">9</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000207421">&#x725b;&#x6d25;&#x521d;&#x9636;&#x82f1;&#x6c49;&#x53cc;&#x89e3;&#x8bcd;&#x5178;</a></td>
+                    <td class="whitetext">&#x0041;&#x006e;&#x0067;&#x0065;&#x006c;&#x0061;&#x0043;&#x0072;&#x0061;&#x0077;&#x006c;&#x0065;&#x0079;&#x82f1;&#x8bed;&#x539f;&#x7248;&#x7f16;&#x8f91;</td>
+                    <td class="whitetext">&#x5546;&#x52a1;&#x5370;&#x4e66;&#x9986; &#x0031;&#x0039;&#x0039;&#x0039;</td>
+                    <td class="whitetext">&#x0048;&#x0033;&#x0031;&#x0036;&#x002f;&#x0032;&#x0035;&#x0035;</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">10</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000783192">&#x7981;&#x5fcc;&#x9b54;&#x672f;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x8bd1;&#x6587;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0031;&#x0031;&#x0039;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">11</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000418903">&#x5e73;&#x51e1;&#x7684;&#x4e16;&#x754c;&#x002e;&#x7b2c;&#x4e09;&#x90e8;</a></td>
+                    <td class="whitetext">&#x8def;&#x9065;&#x005b;&#x8457;&#x005d;</td>
+                    <td class="whitetext">&#x4eba;&#x6c11;&#x6587;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0034;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0037;&#x002e;&#x0035;&#x002f;&#x0036;&#x0036;&#x0033;&#x002f;&#x0037;&#x002f;&#x0056;&#x002e;&#x0033;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">12</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000778382">&#x62c9;&#x666e;&#x62c9;&#x65af;&#x7684;&#x9b54;&#x5973;</a></td>
+                    <td class="whitetext">&#x6771;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x5317;&#x4eac;&#x8054;&#x5408;&#x51fa;&#x7248;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0030;&#x0033;&#x0039;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">13</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000487995">&#x5c0f;&#x59e8;&#x591a;&#x9e64;</a></td>
+                    <td class="whitetext">&#x4e25;&#x6b4c;&#x82d3;&#x8457;</td>
+                    <td class="whitetext">&#x4f5c;&#x5bb6;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0030;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0037;&#x002e;&#x0035;&#x0037;&#x002f;&#x0033;&#x0037;&#x0035;&#x0030;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">14</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000800222">&#x82b3;&#x534e;</a></td>
+                    <td class="whitetext">&#x4e25;&#x6b4c;&#x82d3;&#x8457;</td>
+                    <td class="whitetext">&#x4eba;&#x6c11;&#x6587;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;&#x002e;&#x0030;&#x0034;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0037;&#x002e;&#x0035;&#x002f;&#x0033;&#x0037;&#x0039;&#x0031;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">15</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000738653">&#x6211;&#x662f;&#x732b;&#x003a;&#x7ed8;&#x56fe;&#x672c;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x0020;&#x590f;&#x76ee;&#x6f31;&#x77f3;&#x8457;</td>
+                    <td class="whitetext">&#x4f5c;&#x5bb6;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0034;&#x002f;&#x0031;&#x0038;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">16</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000775952">&#x8d8a;&#x79c0;&#x53f2;&#x7a3f;</a></td>
+                    <td class="whitetext">&#x5e7f;&#x5dde;&#x5e02;&#x8d8a;&#x79c0;&#x533a;&#x4eba;&#x6c11;&#x653f;&#x5e9c;&#x5730;&#x65b9;&#x5fd7;&#x529e;&#x516c;&#x5ba4;&#x002c;&#x0020;&#x5e7f;&#x5dde;&#x5e02;&#x8d8a;&#x79c0;&#x533a;&#x653f;&#x534f;&#x5b66;&#x4e60;&#x548c;&#x6587;&#x53f2;&#x59d4;&#x5458;&#x4f1a;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x5e7f;&#x4e1c;&#x7ecf;&#x6d4e;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x004b;&#x0032;&#x0039;&#x0036;&#x002e;&#x0035;&#x0031;&#x002f;&#x0038;&#x0039;</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">17</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000086134">&#x65f6;&#x95f4;&#x7b80;&#x53f2;&#x003a;&#x63d2;&#x56fe;&#x672c;</a></td>
+                    <td class="whitetext">&#x53f2;&#x8482;&#x82ac;&#x00b7;&#x970d;&#x91d1;</td>
+                    <td class="whitetext">&#x6e56;&#x5357;&#x79d1;&#x6280;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0031;</td>
+                    <td class="whitetext">&#x0050;&#x0031;&#x0035;&#x0039;&#x002d;&#x0034;&#x0039;&#x002f;&#x0034;</td>
+                    <td class="whitetext">8</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">0.75</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">18</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000200425">&#x7f8e;&#x5473;&#x82b1;&#x679c;&#x8336;</a></td>
+                    <td class="whitetext">&#x9a6c;&#x4e3d;&#x5a1c;&#x002c;&#x5468;&#x4e9a;&#x5a1f;&#x8457;</td>
+                    <td class="whitetext">&#x5409;&#x6797;&#x79d1;&#x5b66;&#x6280;&#x672f;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0034;</td>
+                    <td class="whitetext">&#x0054;&#x0053;&#x0032;&#x0037;&#x0032;&#x002e;&#x0035;&#x002f;&#x0032;&#x0037;</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">19</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000586949">&#x6bdb;&#x6cfd;&#x4e1c;&#x4f20;&#x002e;&#x7b2c;&#x0032;&#x7248;</a></td>
+                    <td class="whitetext">&#x4e2d;&#x5171;&#x4e2d;&#x592e;&#x6587;&#x732e;&#x7814;&#x7a76;&#x5ba4;&#x7f16;</td>
+                    <td class="whitetext">&#x4e2d;&#x592e;&#x6587;&#x732e;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0031;</td>
+                    <td class="whitetext">&#x0041;&#x0037;&#x0035;&#x0031;&#x002f;&#x0032;&#x0038;</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">20</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000741597">&#x5047;&#x9762;&#x996d;&#x5e97;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x5357;&#x6d77;&#x51fa;&#x7248;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0038;&#x0036;&#x0034;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">21</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000793550">&#x9020;&#x5f69;&#x8679;&#x7684;&#x4eba;</a></td>
+                    <td class="whitetext">&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x005b;&#x65e5;&#x005d;</td>
+                    <td class="whitetext">&#x5341;&#x6708;&#x6587;&#x827a; &#x0032;&#x0030;&#x0031;&#x0037;&#x002d;&#x0030;&#x0036;&#x002d;&#x0030;&#x0031;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0030;&#x0037;&#x0035;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">22</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000431177">&#x56fd;&#x5bcc;&#x8bba;&#x002e;&#x4e0a;</a></td>
+                    <td class="whitetext">&#x0028;&#x82f1;&#x0029;&#x0020;&#x4e9a;&#x5f53;&#x65af;&#x5bc6;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x4e09;&#x8054;&#x4e66;&#x5e97; &#x0032;&#x0030;&#x0030;&#x0039;&#x002e;&#x0030;&#x0033;</td>
+                    <td class="whitetext">&#x0046;&#x0030;&#x0039;&#x0031;&#x002e;&#x0033;&#x0033;&#x002f;&#x0034;&#x0036;&#x002f;&#x0056;&#x002e;&#x0031;</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">1.2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">23</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000691219">&#x89e3;&#x5fe7;&#x6742;&#x8d27;&#x5e97;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x5357;&#x6d77;&#x51fa;&#x7248;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0034;&#x002e;&#x0030;&#x0035;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0037;&#x0033;&#x0035;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">24</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000665055">&#x4e13;&#x5bb6;&#x8bca;&#x6cbb;&#x75db;&#x98ce;</a></td>
+                    <td class="whitetext">&#x4e3b;&#x7f16;&#x6f58;&#x65b0;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x79d1;&#x5b66;&#x6280;&#x672f;&#x6587;&#x732e;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0052;&#x0034;&#x002d;&#x0034;&#x0039;&#x002f;&#x0031;&#x0036;</td>
+                    <td class="whitetext">1</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">5</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">25</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000131575">&#x7ffb;&#x8bd1;&#x95ee;&#x9898;&#x63a2;&#x8ba8;</a></td>
+                    <td class="whitetext">&#x0050;&#x0065;&#x0074;&#x0065;&#x0072;&#x0020;&#x004e;&#x0065;&#x0077;&#x006d;&#x0061;&#x0072;&#x006b;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x5916;&#x8bed;&#x6559;&#x80b2;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0031;</td>
+                    <td class="whitetext">&#x0048;&#x0030;&#x0035;&#x0039;&#x002f;&#x0033;&#x0036;</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">26</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000443180">&#x8001;&#x4e2d;&#x533b;&#x6559;&#x4e2d;&#x8001;&#x5e74;&#x600e;&#x4e48;&#x5403;</a></td>
+                    <td class="whitetext">&#x826f;&#x77f3;&#x002c;&#x0020;&#x5218;&#x6167;&#x6ee2;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x5409;&#x6797;&#x79d1;&#x5b66;&#x6280;&#x672f;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0038;&#x002e;&#x0031;&#x0031;</td>
+                    <td class="whitetext">&#x0052;&#x0031;&#x0035;&#x0033;&#x002e;&#x0033;&#x002f;&#x0031;&#x0037;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">27</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000790516">&#x6fd2;&#x6b7b;&#x4e4b;&#x773c;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x0020;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x8bd1;&#x6587;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0030;&#x0037;&#x0034;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">28</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000561407">&#x5c40;&#x5916;&#x4eba;</a></td>
+                    <td class="whitetext">&#x0028;&#x6cd5;&#x0029;&#x0020;&#x963f;&#x5c14;&#x8d1d;&#x00b7;&#x52a0;&#x7f2a;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x8bd1;&#x6587;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0030;</td>
+                    <td class="whitetext">&#x0049;&#x0035;&#x0036;&#x0035;&#x002e;&#x0034;&#x0035;&#x002f;&#x0032;&#x0034;&#x0031;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">29</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000685790">&#x5c40;&#x5916;&#x4eba;</a></td>
+                    <td class="whitetext">&#x0028;&#x6cd5;&#x0029;&#x0020;&#x963f;&#x5c14;&#x8d1d;&#x00b7;&#x52a0;&#x7f2a;&#x8457;</td>
+                    <td class="whitetext">&#x534e;&#x4e1c;&#x5e08;&#x8303;&#x5927;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0034;</td>
+                    <td class="whitetext">&#x0049;&#x0035;&#x0036;&#x0035;&#x002e;&#x0034;&#x0035;&#x002f;&#x0032;&#x0038;&#x0033;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">30</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000588727">&#x767e;&#x5e74;&#x7f8e;&#x6587;&#x003a;&#x0031;&#x0039;&#x0030;&#x0030;&#x002d;&#x0032;&#x0030;&#x0030;&#x0030;&#x002c;&#x8bfb;&#x4e66;&#x5377;&#x002e;&#x9752;&#x6625;&#x9605;&#x8bfb;&#x7248;</a></td>
+                    <td class="whitetext">&#x5b63;&#x7fa1;&#x6797;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x767e;&#x82b1;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0031;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0036;&#x0036;&#x002f;&#x0033;&#x0036;&#x0030;&#x002d;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">31</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000476812">&#x4e86;&#x4e0d;&#x8d77;&#x7684;&#x76d6;&#x8328;&#x6bd4;</a></td>
+                    <td class="whitetext">&#x0028;&#x7f8e;&#x0029;&#x0020;&#x83f2;&#x8328;&#x6770;&#x62c9;&#x5fb7;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x8bd1;&#x6587;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0039;&#x002e;&#x0031;&#x0030;</td>
+                    <td class="whitetext">&#x0049;&#x0037;&#x0031;&#x0032;&#x002e;&#x0034;&#x0035;&#x002f;&#x0039;&#x0032;&#x0031;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">32</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000691420">&#x4e56;&#xff0c;&#x6478;&#x6478;&#x5934;</a></td>
+                    <td class="whitetext">&#x5927;&#x51b0;&#x005b;&#x8457;&#x005d;</td>
+                    <td class="whitetext">&#x6e56;&#x5357;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0034;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0037;&#x002e;&#x0038;&#x0031;&#x002f;&#x0035;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">33</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000754410">&#x6d6e;&#x4f11;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x0020;&#x6e21;&#x8fb9;&#x6df3;&#x4e00;&#x8457;</td>
+                    <td class="whitetext">&#x4e5d;&#x5dde;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0034;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0039;&#x0033;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">34</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000579612">&#x5341;&#x4e00;&#x5b57;&#x6740;&#x4eba;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x8bd1;&#x6587;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0035;&#x0034;&#x0034;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">35</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000683306">&#x7b2c;&#x4e03;&#x5929;</a></td>
+                    <td class="whitetext">&#x4f59;&#x534e;&#x8457;</td>
+                    <td class="whitetext">&#x65b0;&#x661f;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0037;&#x002e;&#x0035;&#x002f;&#x0033;&#x0035;&#x0032;&#x0037;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">36</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000399878">&#x5728;&#x7ec6;&#x96e8;&#x4e2d;&#x547c;&#x558a;</a></td>
+                    <td class="whitetext">&#x4f59;&#x534e;&#x005b;&#x8457;&#x005d;</td>
+                    <td class="whitetext">&#x4f5c;&#x5bb6;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0038;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0037;&#x002e;&#x0035;&#x0037;&#x002f;&#x0032;&#x0037;&#x0030;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">37</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000587220">&#x5de8;&#x6d41;&#x6cb3;</a></td>
+                    <td class="whitetext">&#x9f50;&#x90a6;&#x5a9b;&#x8457;</td>
+                    <td class="whitetext">&#x751f;&#x6d3b;&#x00b7;&#x8bfb;&#x4e66;&#x00b7;&#x65b0;&#x77e5;&#x4e09;&#x8054;&#x4e66;&#x5e97; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0037;&#x002e;&#x0035;&#x002f;&#x0033;&#x0034;&#x0034;&#x0030;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">38</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000684178">&#x7eb8;&#x724c;&#x5c4b;</a></td>
+                    <td class="whitetext">&#x0028;&#x82f1;&#x0029;&#x0020;&#x8fc8;&#x514b;&#x5c14;&#x00b7;&#x9053;&#x5e03;&#x65af;&#x8457;</td>
+                    <td class="whitetext">&#x767e;&#x82b1;&#x6d32;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0034;</td>
+                    <td class="whitetext">&#x0049;&#x0035;&#x0036;&#x0031;&#x002e;&#x0034;&#x0035;&#x002f;&#x0035;&#x0039;&#x0034;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">39</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000757178">&#x0032;&#x0030;&#x0031;&#x0038;</a></td>
+                    <td class="whitetext">&#x5218;&#x6148;&#x6b23;</td>
+                    <td class="whitetext">&#x6c5f;&#x82cf;&#x51e4;&#x51f0;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0035;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0037;&#x002e;&#x0037;&#x002f;&#x0031;&#x0037;&#x0032;&#x0038;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">40</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000734428">&#x8424;&#x706b;&#x866b;&#x5c0f;&#x5df7;</a></td>
+                    <td class="whitetext">&#x0028;&#x7f8e;&#x0029;&#x514b;&#x8389;&#x4e1d;&#x6c40;&#x00b7;&#x6c49;&#x5a1c;&#x8457;</td>
+                    <td class="whitetext">&#x767e;&#x82b1;&#x6d32;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0035;&#x002e;&#x0031;&#x0031;</td>
+                    <td class="whitetext">&#x0049;&#x0037;&#x0031;&#x0032;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0034;&#x0037;&#x0036;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">41</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000736886">&#x767d;&#x9a6c;&#x5c71;&#x5e84;&#x6740;&#x4eba;&#x4e8b;&#x4ef6;</a></td>
+                    <td class="whitetext">&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0035;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0038;&#x0034;&#x0039;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">42</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000802888">&#x604b;&#x604b;&#x7b14;&#x8bb0;&#x672c;</a></td>
+                    <td class="whitetext">&#x0028;&#x7f8e;&#x0029;&#x5c3c;&#x53e4;&#x62c9;&#x65af;&#x00b7;&#x65af;&#x5e15;&#x514b;&#x601d;&#x8457;</td>
+                    <td class="whitetext">&#x957f;&#x6c5f;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;&#x002e;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0049;&#x0037;&#x0031;&#x0032;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0038;&#x0035;&#x0039;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">43</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000397287">&#x4e14;&#x542c;&#x98ce;&#x541f;</a></td>
+                    <td class="whitetext">&#x6751;&#x4e0a;&#x6625;&#x6811;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x8bd1;&#x6587;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0037;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0039;&#x0033;&#x002f;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">44</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000446823">&#x5c0f;&#x56e2;&#x5706;</a></td>
+                    <td class="whitetext">&#x5f20;&#x7231;&#x73b2;&#x002c;</td>
+                    <td class="whitetext">&#x5317;&#x4eac;&#x5341;&#x6708;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0039;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0034;&#x0036;&#x002e;&#x0035;&#x0037;&#x002f;&#x0037;&#x0039;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">45</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000717784">&#x6c89;&#x7761;&#x7684;&#x68ee;&#x6797;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x5357;&#x6d77;&#x51fa;&#x7248;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0038;&#x0035;&#x0035;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">46</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000602624">&#x6076;&#x610f;&#x002e;&#x7b2c;&#x0032;&#x7248;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x0020;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x5357;&#x6d77;&#x51fa;&#x7248;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0035;&#x0036;&#x0033;&#x003d;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">47</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000580623">&#x6bd5;&#x4e1a;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x0020;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x5357;&#x6d77;&#x51fa;&#x7248;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0035;&#x0035;&#x0034;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">48</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000568919">&#x6c89;&#x9ed8;&#x7684;&#x5927;&#x591a;&#x6570;</a></td>
+                    <td class="whitetext">&#x738b;&#x5c0f;&#x6ce2;&#x8457;</td>
+                    <td class="whitetext">&#x5317;&#x4eac;&#x5341;&#x6708;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0031;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0036;&#x0037;&#x002e;&#x0031;&#x002f;&#x0031;&#x0038;&#x0035;&#x0033;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">49</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000781896">&#x5979;&#x548c;&#x4ed6;</a></td>
+                    <td class="whitetext">&#x0028;&#x6cd5;&#x0029;&#x9a6c;&#x514b;&#x00b7;&#x674e;&#x7ef4;&#x0028;&#x004d;&#x0061;&#x0072;&#x0063;&#x0020;&#x004c;&#x0065;&#x0076;&#x0079;&#x0029;&#x8457;</td>
+                    <td class="whitetext">&#x6e56;&#x5357;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;&#x002e;&#x0030;&#x0038;</td>
+                    <td class="whitetext">&#x0049;&#x0035;&#x0036;&#x0035;&#x002e;&#x0034;&#x0035;&#x002f;&#x0034;&#x0030;&#x0034;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">50</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000453794">&#x4eb2;&#x7231;&#x7684;&#x5b89;&#x5fb7;&#x70c8;</a></td>
+                    <td class="whitetext">&#x9f99;&#x5e94;&#x53f0;&#x002c;&#x0020;&#x5b89;&#x5fb7;&#x70c8;&#x5408;&#x8457;</td>
+                    <td class="whitetext">&#x4eba;&#x6c11;&#x6587;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0038;</td>
+                    <td class="whitetext">&#x0049;&#x0032;&#x0036;&#x0037;&#x002e;&#x0035;&#x002f;&#x0031;&#x0032;&#x0035;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">51</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000574274">&#x6ca1;&#x6709;&#x51f6;&#x624b;&#x7684;&#x6740;&#x4eba;&#x591c;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x0020;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x4eba;&#x6c11;&#x6587;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0030;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0035;&#x0031;&#x0036;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">52</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000788587">&#x534a;&#x843d;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x6a2a;&#x5c71;&#x79c0;&#x592b;&#x8457;</td>
+                    <td class="whitetext">&#x767e;&#x82b1;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0030;&#x0036;&#x0039;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">53</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000788596">&#x90a3;&#x65f6;&#x7684;&#x67d0;&#x4eba;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x8bd1;&#x6797;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0030;&#x0036;&#x0030;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">54</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000605098">&#x653e;&#x5b66;&#x540e;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x0020;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x5357;&#x6d77;&#x51fa;&#x7248;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0030;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x002f;&#x0036;&#x0031;&#x0037;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">55</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000788597">&#x82b1;&#x4e0e;&#x7231;&#x4e3d;&#x4e1d;&#x6740;&#x4eba;&#x4e8b;&#x4ef6;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x4e59;&#x4e00;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x53cb;&#x8c0a;&#x51fa;&#x7248;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x0036;&#x002f;&#x0039;&#x0033;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">56</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000776298">&#x613f;&#x4f60;&#x7684;&#x9752;&#x6625;&#x4e0d;&#x8d1f;&#x5e74;&#x534e;&#x003a;&#x5c0f;&#x5fae;&#x521b;&#x4e1a;&#x9886;&#x8dd1;&#x8005;&#x8bb8;&#x78ca;</a></td>
+                    <td class="whitetext">&#x5218;&#x82b8;&#x7545;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x6587;&#x53f2;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x004b;&#x0038;&#x0032;&#x0035;&#x002e;&#x0033;&#x0038;&#x002f;&#x0032;&#x0037;&#x0037;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">57</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000750471">&#x4ece;&#x0030;&#x5230;&#x65e0;&#x7a77;&#xff0c;&#x6570;&#x5b66;&#x5982;&#x4f55;&#x6539;&#x53d8;&#x4e86;&#x4e16;&#x754c;</a></td>
+                    <td class="whitetext">&#x514b;&#x91cc;&#x65af;&#x00b7;&#x97e6;&#x6797;&#x8457;</td>
+                    <td class="whitetext">&#x5317;&#x4eac;&#x65f6;&#x4ee3;&#x534e;&#x6587;&#x4e66;&#x5c40; &#x0032;&#x0030;&#x0031;&#x0035;</td>
+                    <td class="whitetext">&#x004f;&#x0031;&#x0031;&#x002d;&#x0034;&#x0039;&#x002f;&#x0038;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">58</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000157290">&#x57fa;&#x7840;&#x6709;&#x673a;&#x5316;&#x5b66;&#x002e;&#x4e0a;&#x518c;&#x002e;&#x0032;&#x7248;</a></td>
+                    <td class="whitetext">&#x90a2;&#x5176;&#x6bc5;&#x7b49;&#x7f16;</td>
+                    <td class="whitetext">&#x9ad8;&#x7b49;&#x6559;&#x80b2;&#x51fa;&#x7248;&#x793e; &#x0031;&#x0039;&#x0039;&#x0033;</td>
+                    <td class="whitetext">&#x004f;&#x0036;&#x0032;&#x002f;&#x0034;&#x0030;&#x003d;&#x0032;&#x002f;&#x0056;&#x002e;&#x0031;</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">59</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000205734">&#x5e7f;&#x4e1c;&#x51c9;&#x8336;&#x002e;&#x4fee;&#x8ba2;&#x672c;</a></td>
+                    <td class="whitetext">&#x79e6;&#x8273;&#x82ac;&#x7f16;&#x8457;</td>
+                    <td class="whitetext">&#x5e7f;&#x4e1c;&#x79d1;&#x6280;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0033;</td>
+                    <td class="whitetext">&#x0052;&#x0032;&#x0038;&#x0039;&#x002e;&#x0035;&#x002f;&#x0032;&#x0038;&#x003d;&#x0032;</td>
+                    <td class="whitetext">6</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">0.83</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">60</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000710511">&#x767e;&#x53d8;&#x8425;&#x517b;&#x7ca5;</a></td>
+                    <td class="whitetext">&#x7280;&#x6587;&#x56fe;&#x4e66;&#x7f16;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x7eba;&#x7ec7;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">&#x0054;&#x0053;&#x0039;&#x0037;&#x0032;&#x002e;&#x0031;&#x0033;&#x0037;&#x002f;&#x0031;&#x0039;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">61</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000191581">&#x6bdb;&#x6cfd;&#x4e1c;&#x9009;&#x96c6;&#x002e;&#x7b2c;&#x4e00;&#x5377;&#x002e;&#x0032;&#x7248;</a></td>
+                    <td class="whitetext">&#x6bdb;&#x6cfd;&#x4e1c;&#x8457;</td>
+                    <td class="whitetext">&#x4eba;&#x6c11;&#x51fa;&#x7248;&#x793e; &#x0031;&#x0039;&#x0039;&#x0031;</td>
+                    <td class="whitetext">&#x0041;&#x0034;&#x0031;&#x002f;&#x0034;&#x003d;&#x0032;&#x002f;&#x0056;&#x002e;&#x0031;</td>
+                    <td class="whitetext">9</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">0.56</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">62</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000191585">&#x6bdb;&#x6cfd;&#x4e1c;&#x9009;&#x96c6;&#x002e;&#x7b2c;&#x4e8c;&#x5377;&#x002e;&#x0032;&#x7248;</a></td>
+                    <td class="whitetext">&#x6bdb;&#x6cfd;&#x4e1c;&#x8457;</td>
+                    <td class="whitetext">&#x4eba;&#x6c11;&#x51fa;&#x7248;&#x793e; &#x0031;&#x0039;&#x0039;&#x0031;</td>
+                    <td class="whitetext">&#x0041;&#x0034;&#x0031;&#x002f;&#x0034;&#x003d;&#x0032;&#x002f;&#x0056;&#x002e;&#x0032;</td>
+                    <td class="whitetext">10</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">0.5</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">63</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000668437">&#x4e00;&#x4e5d;&#x516b;&#x56db;</a></td>
+                    <td class="whitetext">&#x0028;&#x82f1;&#x0029;&#x0020;&#x4e54;&#x6cbb;&#x00b7;&#x5965;&#x5a01;&#x5c14;&#x8457;</td>
+                    <td class="whitetext">&#x82b1;&#x57ce;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">&#x0049;&#x0035;&#x0036;&#x0031;&#x002e;&#x0034;&#x0035;&#x002f;&#x0031;&#x0032;&#x002d;&#x0032;</td>
+                    <td class="whitetext">2</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">2.5</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">64</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000751596">&#x6700;&#x5f3a;&#x5927;&#x8111;&#x4e4b;&#x8111;&#x529b;&#x6fc0;&#x8361;&#x672f;&#x003a;&#x795e;&#x5947;&#x7684;&#x8111;&#x529b;&#x6fc0;&#x8361;&#x672f;</a></td>
+                    <td class="whitetext">&#x54c8;&#x91cc;&#x00b7;&#x6d1b;&#x62c9;&#x5c3c;&#x8457;</td>
+                    <td class="whitetext">&#x91d1;&#x57ce;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0035;</td>
+                    <td class="whitetext">&#x0042;&#x0038;&#x0034;&#x0038;&#x002e;&#x0035;&#x002f;&#x0035;&#x0037;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">65</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000761627">&#x505a;&#x4e0d;&#x53ef;&#x80fd;&#x7684;&#x4e8b;&#x003a;&#x53d8;&#x4e0d;&#x53ef;&#x80fd;&#x4e3a;&#x53ef;&#x80fd;&#x7684;&#x0032;&#x0035;&#x6cd5;&#x5219;</a></td>
+                    <td class="whitetext">&#x0028;&#x7f8e;&#x0029;&#x0020;&#x5e15;&#x7279;&#x91cc;&#x514b;&#x00b7;&#x8d1d;&#x7279;&#xff0d;&#x6234;&#x7ef4;&#x8457;</td>
+                    <td class="whitetext">&#x91d1;&#x57ce;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0035;</td>
+                    <td class="whitetext">&#x0042;&#x0038;&#x0034;&#x0038;&#x002e;&#x0034;&#x002d;&#x0034;&#x0039;&#x002f;&#x0038;&#x0030;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">66</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000429737">&#x535a;&#x5f08;&#x8bba;&#x7684;&#x8be1;&#x8ba1;&#x002e;&#x2161;&#x003a;&#x65e5;&#x5e38;&#x751f;&#x6d3b;&#x4e2d;&#x7684;&#x535a;&#x5f08;&#x7b56;&#x7565;&#x002e;&#x63d2;&#x56fe;&#x672c;</a></td>
+                    <td class="whitetext">&#x738b;&#x6625;&#x6c38;&#x7f16;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x53d1;&#x5c55;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0039;&#x002e;&#x0030;&#x0033;</td>
+                    <td class="whitetext">&#x0043;&#x0039;&#x0033;&#x0034;&#x002d;&#x0034;&#x0039;&#x002f;&#x0031;&#x0035;&#x002f;&#x0056;&#x002e;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">67</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000701193">&#x5fae;&#x89c2;&#x7ecf;&#x6d4e;&#x5b66;&#x4e60;&#x9898;&#x96c6;</a></td>
+                    <td class="whitetext">&#x5f20;&#x987a;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x4eba;&#x6c11;&#x5927;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0035;&#x002e;&#x0030;&#x0031;</td>
+                    <td class="whitetext">&#x0046;&#x0030;&#x0031;&#x0036;&#x002d;&#x0034;&#x0034;&#x002f;&#x0031;&#x0038;</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.25</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">68</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000496295">&#x517b;&#x751f;&#x7684;&#x667a;&#x6167;</a></td>
+                    <td class="whitetext">&#x6768;&#x4e1c;&#x91ce;&#x7f16;&#x8457;</td>
+                    <td class="whitetext">&#x7ecf;&#x6d4e;&#x7ba1;&#x7406;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0039;</td>
+                    <td class="whitetext">&#x0052;&#x0032;&#x0031;&#x0032;&#x002f;&#x0031;&#x0036;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">5</td>
+                    <td class="whitetext">1.67</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">69</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000694448">&#x4e03;&#x516b;&#x5206;&#x9971;&#x7684;&#x5065;&#x5eb7;&#x4eba;&#x751f;</a></td>
+                    <td class="whitetext">&#x8d75;&#x71a0;&#x5bb8;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x533b;&#x836f;&#x79d1;&#x6280;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0033;&#x002e;&#x0031;&#x0031;</td>
+                    <td class="whitetext">&#x0052;&#x0031;&#x0035;&#x0031;&#x002f;&#x0038;&#x0037;</td>
+                    <td class="whitetext">2</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">70</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000691892">&#x725b;&#x6d25;&#x9ad8;&#x9636;&#x82f1;&#x6c49;&#x53cc;&#x89e3;&#x8bcd;&#x5178;&#x002e;&#x0034;&#x7248;</a></td>
+                    <td class="whitetext">&#x970d;&#x6069;&#x6bd4;&#x0028;&#x0041;&#x002e;&#x0053;&#x002e;&#x0020;&#x0048;&#x006f;&#x0072;&#x006e;&#x0062;&#x0079;&#x0029;&#x539f;&#x8457;</td>
+                    <td class="whitetext">&#x5546;&#x52a1;&#x5370;&#x4e66;&#x9986; &#x0032;&#x0030;&#x0031;&#x0034;&#x002e;&#x0030;&#x0036;</td>
+                    <td class="whitetext">&#x0048;&#x0033;&#x0031;&#x0036;&#x002f;&#x0031;&#x0034;&#x0038;&#x003d;&#x0034;</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">71</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000668640">&#x6fd2;&#x6b7b;&#x4e4b;&#x773c;</a></td>
+                    <td class="whitetext">&#x0028;&#x65e5;&#x0029;&#x0020;&#x4e1c;&#x91ce;&#x572d;&#x543e;&#x8457;</td>
+                    <td class="whitetext">&#x4e0a;&#x6d77;&#x8bd1;&#x6587;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">&#x0049;&#x0033;&#x0031;&#x0033;&#x002e;&#x0034;&#x0035;&#x0036;&#x002f;&#x0037;&#x002d;&#x0032;</td>
+                    <td class="whitetext">2</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">72</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000748884">&#x62ff;&#x8d77;&#x624b;&#x673a;&#x62cd;&#x5927;&#x7247;&#x003a;&#x8ddf;&#x6444;&#x5f71;&#x5e08;&#x5b66;&#x624b;&#x673a;&#x6444;&#x5f71;&#x6280;&#x5de7;</a></td>
+                    <td class="whitetext">&#x90d1;&#x58ec;&#x6770;&#x8457;</td>
+                    <td class="whitetext">&#x4eba;&#x6c11;&#x90ae;&#x7535;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x004a;&#x0034;&#x0031;&#x002f;&#x0034;&#x0033;&#x0039;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">73</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000773949">&#x8bbe;&#x8ba1;&#x601d;&#x7ef4;&#x4e0e;&#x521b;&#x610f;&#x002e;&#x7b2c;&#x0032;&#x7248;</a></td>
+                    <td class="whitetext">&#x4f0d;&#x658c;&#x002c;&#x0020;&#x66f9;&#x5229;&#x002c;&#x0020;&#x5b54;&#x7965;&#x56fd;&#x8457;</td>
+                    <td class="whitetext">&#x5317;&#x4eac;&#x5927;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x004a;&#x0030;&#x0036;&#x002f;&#x0033;&#x0036;&#x0039;&#x003d;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">74</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000793895">&#x4e24;&#x5cb8;&#x65b0;&#x7f16;&#x4e2d;&#x56fd;&#x8fd1;&#x4ee3;&#x53f2;&#x002c;&#x6c11;&#x56fd;&#x5377;</a></td>
+                    <td class="whitetext">&#x738b;&#x5efa;&#x6717;&#xff0c;&#x9ec4;&#x514b;&#x6b66;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x793e;&#x4f1a;&#x79d1;&#x5b66;&#x6587;&#x732e;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x004b;&#x0032;&#x0035;&#x002f;&#x0031;&#x0035;&#x0037;</td>
+                    <td class="whitetext">2</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">75</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000465571">&#x571f;&#x58e4;&#x5b66;</a></td>
+                    <td class="whitetext">&#x738b;&#x679c;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x9ad8;&#x7b49;&#x6559;&#x80b2;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0039;</td>
+                    <td class="whitetext">&#x0053;&#x0031;&#x0035;&#x002f;&#x0039;&#x0031;</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">76</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000771751">&#x732a;&#x7684;&#x4fe1;&#x53f7;&#x003a;&#x89c2;&#x5bdf;&#xff0c;&#x601d;&#x8003;&#x548c;&#x884c;&#x52a8;</a></td>
+                    <td class="whitetext">&#x0028;&#x8377;&#x0029;&#x0020;&#x6768;&#x6d69;&#x68ee;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x519c;&#x4e1a;&#x79d1;&#x5b66;&#x6280;&#x672f;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x0053;&#x0038;&#x0032;&#x0038;&#x002e;&#x0034;&#x002f;&#x0033;&#x0039;</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">77</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000426446">&#x4f5c;&#x7269;&#x683d;&#x57f9;&#x5b66;</a></td>
+                    <td class="whitetext">&#x80e1;&#x7acb;&#x52c7;&#x002c;&#x0020;&#x4e01;&#x8273;&#x950b;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x9ad8;&#x7b49;&#x6559;&#x80b2;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0038;</td>
+                    <td class="whitetext">&#x0053;&#x0033;&#x0031;&#x002f;&#x0032;&#x0034;</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">78</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000797200">&#x4e0a;&#x763e;&#x003a;&#x8ba9;&#x7528;&#x6237;&#x517b;&#x6210;&#x4f7f;&#x7528;&#x4e60;&#x60ef;&#x7684;&#x56db;&#x5927;&#x4ea7;&#x54c1;&#x903b;&#x8f91;&#x003a;&#x0068;&#x006f;&#x0077;&#x0020;&#x0074;&#x006f;&#x0020;&#x0062;&#x0075;&#x0069;&#x006c;&#x0064;&#x0020;&#x0068;&#x0061;&#x0062;&#x0069;&#x0074;&#x002d;&#x0066;&#x006f;&#x0072;&#x006d;&#x0069;&#x006e;&#x0067;&#x0020;&#x0070;&#x0072;&#x006f;&#x0064;&#x0075;&#x0063;&#x0074;&#x0073;</a></td>
+                    <td class="whitetext">&#x0028;&#x7f8e;&#x0029;&#x0020;&#x5c3c;&#x5c14;&#x00b7;&#x57c3;&#x4e9a;&#x5c14;&#x002c;&#x0020;&#x0028;&#x7f8e;&#x0029;&#x0020;&#x745e;&#x5b89;&#x00b7;&#x80e1;&#x4f5b;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x4fe1;&#x51fa;&#x7248;&#x96c6;&#x56e2; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0054;&#x0042;&#x0034;&#x0037;&#x0032;&#x002f;&#x0033;&#x0038;&#x0033;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">79</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000774970">&#x0041;&#x0063;&#x0063;&#x0065;&#x0073;&#x0073;&#x0020;&#x0032;&#x0030;&#x0031;&#x0030;&#x6570;&#x636e;&#x5e93;&#x5b9e;&#x7528;&#x6559;&#x7a0b;</a></td>
+                    <td class="whitetext">&#x4e3b;&#x7f16;&#x738b;&#x7ea2;</td>
+                    <td class="whitetext">&#x6b66;&#x6c49;&#x5927;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x0054;&#x0050;&#x0033;&#x0031;&#x0031;&#x002e;&#x0031;&#x0033;&#x0038;&#x002f;&#x0031;&#x0032;&#x0039;&#x0033;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">80</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000772799">&#x004a;&#x0032;&#x0045;&#x0045;&#x9879;&#x76ee;&#x5f00;&#x53d1;&#x4e0e;&#x8bbe;&#x8ba1;&#x002e;&#x7b2c;&#x0032;&#x7248;</a></td>
+                    <td class="whitetext">&#x5f6d;&#x707f;&#x534e;&#x002c;&#x0020;&#x97e6;&#x6653;&#x654f;&#x002c;&#x0020;&#x9b4f;&#x58eb;&#x4f1f;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x94c1;&#x9053;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x0054;&#x0050;&#x0033;&#x0031;&#x0032;&#x002f;&#x0034;&#x0039;&#x0034;&#x0038;&#x003d;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">81</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000718150">&#x950b;&#x5229;&#x7684;&#x006a;&#x0051;&#x0075;&#x0065;&#x0072;&#x0079;&#x002e;&#x0032;&#x7248;</a></td>
+                    <td class="whitetext">&#x5355;&#x4e1c;&#x6797;&#xff0c;&#x5f20;&#x6653;&#x83f2;&#xff0c;&#x9b4f;&#x7136;&#x7f16;&#x8457;</td>
+                    <td class="whitetext">&#x4eba;&#x6c11;&#x90ae;&#x7535;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0054;&#x0050;&#x0033;&#x0031;&#x0032;&#x002f;&#x0033;&#x0036;&#x0031;&#x0038;&#x003d;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">82</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000721686">&#x0050;&#x0079;&#x0074;&#x0068;&#x006f;&#x006e;&#x6570;&#x636e;&#x5206;&#x6790;&#x4e0e;&#x6316;&#x6398;&#x5b9e;&#x6218;</a></td>
+                    <td class="whitetext">&#x5f20;&#x826f;&#x5747;&#x0020;&#x002e;&#x002e;&#x002e;&#x0020;&#x005b;&#x7b49;&#x005d;&#x0020;&#x8457;</td>
+                    <td class="whitetext">&#x673a;&#x68b0;&#x5de5;&#x4e1a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x0054;&#x0050;&#x0033;&#x0031;&#x0031;&#x002e;&#x0035;&#x0036;&#x002f;&#x0037;&#x0034;&#x0030;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">83</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000778986">&#x004e;&#x006f;&#x0064;&#x0065;&#x002e;&#x006a;&#x0073;&#x8fdb;&#x9636;&#x4e4b;&#x8def;</a></td>
+                    <td class="whitetext">&#x5c24;&#x5609;&#x7f16;&#x8457;</td>
+                    <td class="whitetext">&#x6e05;&#x534e;&#x5927;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0054;&#x0050;&#x0033;&#x0031;&#x0032;&#x002f;&#x0034;&#x0039;&#x0039;&#x0038;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">84</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000788976">&#x7b80;&#x5355;&#x6613;&#x5b66;&#x0020;&#x73a9;&#x8f6c;&#x0041;&#x0072;&#x0064;&#x0075;&#x0069;&#x006e;&#x006f;</a></td>
+                    <td class="whitetext">&#x5b59;&#x5fb7;&#x519b;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x5316;&#x5b66;&#x5de5;&#x4e1a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;</td>
+                    <td class="whitetext">&#x0054;&#x0050;&#x0033;&#x0036;&#x0038;&#x002e;&#x0031;&#x002f;&#x0034;&#x0034;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">85</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000770964">&#x0050;&#x0048;&#x0050;&#x002b;&#x004d;&#x0079;&#x0053;&#x0051;&#x004c;&#x002b;&#x0044;&#x0072;&#x0065;&#x0061;&#x006d;&#x0077;&#x0065;&#x0061;&#x0076;&#x0065;&#x0072;&#x7f51;&#x7ad9;&#x5efa;&#x8bbe;</a></td>
+                    <td class="whitetext">&#x674e;&#x6653;&#x658c;&#x7b49;&#x7f16;&#x8457;</td>
+                    <td class="whitetext">&#x673a;&#x68b0;&#x5de5;&#x4e1a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0036;&#x002e;&#x0031;&#x0030;</td>
+                    <td class="whitetext">&#x0054;&#x0050;&#x0033;&#x0031;&#x0032;&#x002f;&#x0034;&#x0038;&#x0038;&#x0035;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">86</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000667835">&#x602a;&#x8bde;&#x5fc3;&#x7406;&#x5b66;&#x002e;&#x0032;&#x002c;&#x4e0d;&#x53ef;&#x601d;&#x8bae;&#x7684;&#x5fc3;&#x7406;&#x64cd;&#x63a7;&#x002c;&#x0077;&#x0068;&#x0079;&#x0020;&#x0077;&#x0065;&#x0020;&#x0073;&#x0065;&#x0065;&#x0020;&#x0077;&#x0068;&#x0061;&#x0074;&#x0020;&#x0069;&#x0073;&#x006e;&#x0027;&#x0074;&#x0020;&#x0074;&#x0068;&#x0065;&#x0072;&#x0065;&#x002e;&#x65b0;&#x7248;</a></td>
+                    <td class="whitetext">&#x0028;&#x82f1;&#x0029;&#x7406;&#x67e5;&#x5fb7;&#x00b7;&#x6000;&#x65af;&#x66fc;&#x8457;</td>
+                    <td class="whitetext">&#x6e56;&#x5357;&#x6587;&#x827a;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0042;&#x0038;&#x0034;&#x002f;&#x0033;&#x0030;&#x0038;&#x002f;&#x0056;&#x002e;&#x0032;</td>
+                    <td class="whitetext">2</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">87</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000667749">&#x4e2d;&#x56fd;&#x54f2;&#x5b66;&#x7b80;&#x53f2;</a></td>
+                    <td class="whitetext">&#x51af;&#x53cb;&#x5170;&#x8457;</td>
+                    <td class="whitetext">&#x5317;&#x4eac;&#x5927;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">&#x0042;&#x0032;&#x002f;&#x0032;&#x0035;&#x0032;</td>
+                    <td class="whitetext">2</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">88</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000404987">&#x8bba;&#x8bed;&#x4eca;&#x8bfb;</a></td>
+                    <td class="whitetext">&#x674e;&#x6cfd;&#x539a;&#x8457;</td>
+                    <td class="whitetext">&#x4e09;&#x8054;&#x4e66;&#x5e97; &#x0032;&#x0030;&#x0030;&#x0038;</td>
+                    <td class="whitetext">&#x0042;&#x0032;&#x0032;&#x0032;&#x002e;&#x0032;&#x0032;&#x002f;&#x0032;&#x0034;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">89</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000496541">&#x8c08;&#x7f8e;</a></td>
+                    <td class="whitetext">&#x6731;&#x5149;&#x6f5c;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x534e;&#x4e66;&#x5c40; &#x0032;&#x0030;&#x0031;&#x0030;</td>
+                    <td class="whitetext">&#x0042;&#x0038;&#x0033;&#x002f;&#x0032;&#x0030;&#x0033;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">90</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000795577">&#x6469;&#x897f;&#x4e94;&#x7ecf;</a></td>
+                    <td class="whitetext">&#x51af;&#x8c61;&#x8bd1;&#x6ce8;</td>
+                    <td class="whitetext">&#x751f;&#x6d3b;&#x00b7;&#x8bfb;&#x4e66;&#x00b7;&#x65b0;&#x77e5;&#x4e09;&#x8054;&#x4e66;&#x5e97; &#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">&#x0042;&#x0039;&#x0037;&#x0031;&#x002f;&#x0037;&#x0031;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">91</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000799598">&#x8ba4;&#x77e5;&#x7a81;&#x56f4;&#x003a;&#x505a;&#x590d;&#x6742;&#x65f6;&#x4ee3;&#x7684;&#x660e;&#x767d;&#x4eba;</a></td>
+                    <td class="whitetext">&#x8521;&#x5792;&#x78ca;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x4fe1;&#x51fa;&#x7248;&#x96c6;&#x56e2; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0042;&#x0038;&#x0034;&#x0032;&#x002e;&#x0031;&#x002f;&#x0037;&#x0030;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">92</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000667938">&#x4e4c;&#x5408;&#x4e4b;&#x4f17;&#x003a;&#x5927;&#x4f17;&#x5fc3;&#x7406;&#x7814;&#x7a76;</a></td>
+                    <td class="whitetext">&#x0028;&#x6cd5;&#x0029;&#x0020;&#x53e4;&#x65af;&#x5854;&#x592b;&#x00b7;&#x52d2;&#x5e9e;&#x8457;</td>
+                    <td class="whitetext">&#x6c11;&#x4e3b;&#x4e0e;&#x5efa;&#x8bbe;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0034;</td>
+                    <td class="whitetext">&#x0043;&#x0039;&#x0031;&#x0032;&#x002e;&#x0036;&#x0034;&#x002f;&#x0031;&#x0030;</td>
+                    <td class="whitetext">2</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">2</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">93</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000205298">&#x516c;&#x5171;&#x884c;&#x653f;&#x4e0e;&#x516c;&#x5171;&#x4e8b;&#x52a1;</a></td>
+                    <td class="whitetext">&#x0028;&#x7f8e;&#x0029;&#x5c3c;&#x53e4;&#x62c9;&#x65af;&#x00b7;&#x4ea8;&#x5229;&#x8457;</td>
+                    <td class="whitetext">&#x534e;&#x590f;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0032;</td>
+                    <td class="whitetext">&#x0044;&#x0030;&#x0033;&#x0035;&#x002f;&#x0039;&#x0037;</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">94</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000612504">&#x5e7f;&#x5dde;&#x519c;&#x6751;&#x53d1;&#x5c55;&#x62a5;&#x544a;&#x002e;&#x0032;&#x0030;&#x0031;&#x0033;</a></td>
+                    <td class="whitetext">&#x674e;&#x6c5f;&#x6d9b;&#xff0c;&#x6c64;&#x9526;&#x534e;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x793e;&#x4f1a;&#x79d1;&#x5b66;&#x6587;&#x732e;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">&#x0046;&#x0033;&#x0032;&#x0037;&#x002e;&#x0036;&#x0035;&#x0031;&#x002f;&#x0035;&#x002f;&#x0032;&#x0030;&#x0031;&#x0033;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">95</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000577999">&#x50b2;&#x6162;&#x4e0e;&#x504f;&#x89c1;</a></td>
+                    <td class="whitetext">&#x0028;&#x82f1;&#x0029;&#x004a;&#x002e;&#x0020;&#x5965;&#x65af;&#x6c40;&#x0028;&#x004a;&#x002e;&#x0020;&#x0041;&#x0075;&#x0073;&#x0074;&#x0065;&#x006e;&#x0029;&#x539f;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x5bf9;&#x5916;&#x7ffb;&#x8bd1;&#x51fa;&#x7248;&#x6709;&#x9650;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0048;&#x0033;&#x0031;&#x0039;&#x002e;&#x0034;&#x002f;&#x0034;&#x0031;&#x0039;&#x0031;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">96</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000578001">&#x547c;&#x5578;&#x5c71;&#x5e84;</a></td>
+                    <td class="whitetext">&#x0028;&#x82f1;&#x0029;&#x0045;&#x002e;&#x0020;&#x52c3;&#x6717;&#x7279;&#x0028;&#x0045;&#x002e;&#x0020;&#x0042;&#x0072;&#x006f;&#x006e;&#x0074;&#x0065;&#x0029;&#x539f;&#x8457;</td>
+                    <td class="whitetext">&#x4e2d;&#x56fd;&#x5bf9;&#x5916;&#x7ffb;&#x8bd1;&#x51fa;&#x7248;&#x6709;&#x9650;&#x516c;&#x53f8; &#x0032;&#x0030;&#x0031;&#x0032;</td>
+                    <td class="whitetext">&#x0048;&#x0033;&#x0031;&#x0039;&#x002e;&#x0034;&#x002f;&#x0034;&#x0031;&#x0039;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">97</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000571933">&#x0047;&#x0052;&#x0045;&#x6838;&#x5fc3;&#x8bcd;&#x6c47;&#x8003;&#x6cd5;&#x7cbe;&#x6790;</a></td>
+                    <td class="whitetext">&#x9648;&#x7426;&#x4e3b;&#x7f16;</td>
+                    <td class="whitetext">&#x7fa4;&#x8a00;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0030;</td>
+                    <td class="whitetext">&#x0048;&#x0033;&#x0031;&#x0033;&#x002f;&#x0035;&#x0037;&#x0032;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1.33</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">98</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000338893">&#x516c;&#x5171;&#x8425;&#x517b;&#x5b66;</a></td>
+                    <td class="whitetext">&#x4e3b;&#x7f16;&#x674e;&#x83ca;&#x82b1;</td>
+                    <td class="whitetext">&#x6d59;&#x6c5f;&#x5927;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0030;&#x0035;</td>
+                    <td class="whitetext">&#x0052;&#x0031;&#x0035;&#x0031;&#x002f;&#x0035;&#x0038;</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">4</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">99</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000793779">&#x534e;&#x4e3a;&#x7ba1;&#x7406;&#x6cd5;&#x003a;&#x4efb;&#x6b63;&#x975e;&#x7684;&#x4f01;&#x4e1a;&#x7ba1;&#x7406;&#x5fc3;&#x5f97;</a></td>
+                    <td class="whitetext">&#x9ec4;&#x5fd7;&#x4f1f;&#x7f16;&#x8457;</td>
+                    <td class="whitetext">&#x53e4;&#x5434;&#x8f69;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0046;&#x0036;&#x0033;&#x0032;&#x002e;&#x0037;&#x0036;&#x0035;&#x002e;&#x0033;&#x002f;&#x0034;&#x0039;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                        <tr>
+                    <td class="whitetext">100</td>
+                    <td class="whitetext"><a class="blue" href="../opac/item.php?marc_no=0000803644">&#x4f17;&#x7b79;&#x003a;&#x4e92;&#x8054;&#x7f51;&#x91d1;&#x878d;&#x7684;&#x4e0b;&#x4e00;&#x4e2a;&#x98ce;&#x53e3;</a></td>
+                    <td class="whitetext">&#x9648;&#x6653;&#x66be;&#x002c;&#x0020;&#x767d;&#x5e06;&#x002c;&#x0020;&#x9648;&#x82f1;&#x7f16;&#x8457;</td>
+                    <td class="whitetext">&#x6e05;&#x534e;&#x5927;&#x5b66;&#x51fa;&#x7248;&#x793e; &#x0032;&#x0030;&#x0031;&#x0037;</td>
+                    <td class="whitetext">&#x0046;&#x0038;&#x0033;&#x0030;&#x002e;&#x0034;&#x0035;&#x002f;&#x0037;&#x0037;</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">3</td>
+                    <td class="whitetext">1</td>
+                </tr>
+                </table>	
+	<div class="clear"></div><br />
+<br />
+<br />
+
+    </div>
+</div><div id="footer"><div id="copy"><p> 华南农业大学图书馆&nbsp;&nbsp; OPAC v5.5.17.10.17  &nbsp;&nbsp;</p><p class="red">您正在使用 IE7及以下版本的浏览器，为了获取更好的浏览体验，请升级浏览器</p><p>&copy; 1999-2015 <a target="_blank" href="http://www.libsys.com.cn">Jiangsu Huiwen Software Ltd. 江苏汇文软件有限公司</a></p></div></div></body></html>
