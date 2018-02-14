@@ -1,2 +1,4 @@
 # scrapy_books
-Scrapy学校图书馆小爬虫
+简单Scrapy项目
+
+学校图书馆网页小爬虫
